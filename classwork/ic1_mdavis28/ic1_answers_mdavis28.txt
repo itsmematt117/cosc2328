@@ -1,0 +1,9 @@
+1) A webserver is a computer that processes data / request's for other computers.
+
+2) Docker functions as a container that holds all of the appropriate data  for a specific application in one area. The data is stored in docker on the computer vs Node itself being stored on the computer.
+
+3) Web files go in the public folder because that is the standard protocol  / convention.
+
+4)localhost refers to the specific computer / machine that you are working with.
+
+5) The two numbers are ports , one is saying to "listen" to this port and the other is saying to "transmit" to this port.
