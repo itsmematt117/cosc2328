@@ -1,0 +1,42 @@
+/* HW3 – COSC 2328 – Professor McCurry
+     Implemented by: Matthew Davis */
+
+:root {
+  --main-color: #b1093b;
+  --space: 10px;
+  --radius: 20px;
+}
+
+body {
+    background-color:bisque;
+    color:black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#name {
+    color:var(--main-color);
+    text-align:center;
+    font-size:48px;
+    margin-top:0;
+}
+
+.fancy {
+    color:rgb(28, 90, 55)
+}
+
+.superfancy:hover {
+     color: #c0392b; 
+    }
+
+.image-wrapper {
+    width:820px;
+    border: var(--space) dashed rgb(97, 14, 174);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin: 50px auto;
+}
+
+.image-wrapper img {
+    width: 400px;
+    height: 450px;
+}
