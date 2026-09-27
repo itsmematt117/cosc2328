@@ -1,0 +1,47 @@
+/* HW4 – COSC 2328 – Professor McCurry
+     Implemented by: [Your Full Name] */
+
+* { 
+    box-sizing: border-box;
+     margin: 0;
+     padding:0; 
+    }
+
+    body {
+        font-family:'Courier New', Courier, monospace;
+        background-color: rgb(15, 163, 243)
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 1202px;
+        margin: 0 auto;
+    }
+
+    .registration-form {
+       padding:20px;
+       border:solid;
+       background-color: beige;
+       color:rgb(47, 47, 2); 
+       border-radius: 40px;
+       width: 100%;
+
+    }
+
+    input:focus {
+        border : dashed;
+        border-color:rgb(0, 255, 0);
+    }
+    
+    .imgg {
+        max-width: 100%;
+    }
+
+    button[type="submit"]:hover { background-color: #87e5f8; }
+
+
+    @media (min-width: 768px) {
+        .container {display: grid; grid-template-columns: 1fr 1fr;
+              }
+              /*gap: 2rem;*/
+    }

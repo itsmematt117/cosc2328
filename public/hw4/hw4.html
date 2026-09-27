@@ -1,0 +1,68 @@
+<!-- HW4 – COSC 2328 – Professor McCurry
+     Implemented by: Matthew Davis -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/hw4.css">
+        <title>Document</title>
+     </head>
+     <body>
+        <header>
+            <h1>FutureWeb 2026 
+                <p></p>
+            </h1>
+        </header>
+        <main class="container">
+            <div class = "event-info">
+                <h2>Event Details</h2>
+                <ul>
+                    <li>Date</li>
+                    <li>Location</li>
+                    <li>Speakers</li>
+                </ul>
+                <img class="imgg" src="images/biltmore.jpg" alt="Picture of the Biltmore Estate, Ashville NC">
+            </div>
+
+            <div class = "registration-form">
+                <form action="https://httpbin.org/post"
+                 method="post" enctype="multipart/form-data">
+                 <fieldset>
+                    <legend>Attendee Details</legend>
+                    <label for="fullName">Name</label>
+                        <input type="text" id="fullName" name="fullName"
+                        placeholder="Last, first" required>
+
+                    <label for="email">Email</label>
+                        <input type="text" id="email" name="email"
+                        placeholder="example@provider.com" required>
+                        
+                    <label for="date">Date of Arrival</label>
+                        <input type="date" id="date" name="date">
+                 </fieldset>
+
+                 <fieldset>
+                    <legend>Session Preferences</legend>
+                    <select Track Selection> 
+                        <optgroup label="Frontend">
+                            <option>CSS</option>
+                            <option>React</option>
+                            <option>Vue</option>
+                        </optgroup> 
+                        <optgroup label="Backend">
+                            <option>Python</option>
+                            <option>Node.js</option>
+                            <option>Docker</option> 
+                        </optgroup> 
+                    </select>
+                    <label for="resume">Upload Resume/Portfolio</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.docx">
+                 </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </main>
+     </body>
+     </html>
