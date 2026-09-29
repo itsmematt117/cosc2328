@@ -36,3 +36,18 @@ if(hasAccount && agreedToTerms || isEmailVerified) {
 } else {
     console.log("Registration blocked");
 }
+
+let itemCount = null;
+
+if (itemCount) {
+    console.log("Cart has " + itemCount + " items.");
+} else {
+    console.log("Cart is empty.");
+}
+
+
+    console.log(null == undefined);
+    console.log(null === undefined);
+// When comparing null == undefined, it retuns as true, but when comparing
+// null === undefined, it returns as false.
+
