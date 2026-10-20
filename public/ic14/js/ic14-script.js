@@ -29,7 +29,6 @@ let catalog = [
          new Product("Noise-Cancelling Headphones", 159.00, "Electronics", false) 
         ];
 
-
         function renderProducts(list) {
             const container = document.getElementById("product-container");
             container.innerHTML = "";
@@ -74,3 +73,4 @@ document.querySelector("#btn-calculate-total").addEventListener("click", functio
     document.querySelector("#stats-container").innerHTML = 
      "<div class='stat-item'>Total catalog value: $" + total.toFixed(2) + "</div>";
 });
+
