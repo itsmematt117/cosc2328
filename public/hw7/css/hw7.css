@@ -1,0 +1,24 @@
+/* HW7 – COSC 2328 – Professor McCurry
+ Implemented by: Matthew Davis */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+    color: rgb(238, 10, 90);
+     background: linear-gradient(135deg, #fafafa 0%, #20659e 100%);
+      min-height: 100vh; padding: 20px; }
+
+#loadingMessage {
+    text-align: center;
+    margin: auto;}
+
+.pokemon-card { background: #fff; border-radius: 14px; padding: 18px; text-align: center;
+     box-shadow: 0 6px 14px rgba(216, 32, 158, 0.25); transition: transform 0.2s ease;
+    
+ }
+
+.pokemon-roster { 
+    background: white; border-radius: 10px;
+     padding: 25px; display: flex;
+     gap: 10px; box-shadow: 0 4px 6px rgba(60, 9, 226, 0.1);
+     flex-wrap: wrap; }
