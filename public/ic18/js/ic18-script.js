@@ -2,6 +2,20 @@
 // Implemented by: Matthew Davis
 
 
+/*
+
+1) Prop drilling is when data gets pushed through multiple components to get to a specific destination. It becomes a problem when there is more code to maintain and you have to keep track of the various components involved.
+
+2) Create creates the Context, Provide designates a component that it will be available to (usually its children). Finally, Consume is used where the information is actually needed.
+
+3) It has access because it uses the created HabitatContext to access the information.
+
+4) It must be created at the top of the page outside of a component. We place it at the top because it's scope is limited to everything below it. 
+
+5) You would need to add it in the App's return, beneath ModeToggle.
+
+*/
+
 // -- 
 const HabitatContext = React.createContext();
 
