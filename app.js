@@ -9,6 +9,11 @@ const path    = require("path");                          // built-in Node modul
 const app     = express();                               // create the Express application
 //const PORT2    = 3000;                                    // the port your browser connects to
 
+//
+app.use(express.json());                                    // NEW - IC20 : parse incoming JSON and make it available on req.body
+
+
+
 app.use(express.static(path.join(__dirname, "public"))); // serve every file in public/ as a static file
 //___
 
@@ -28,6 +33,11 @@ app.get('/ic19/config', (req, res) => {                  // NEW — IC19: GET ro
     serverTime: new Date().toISOString(),
   });
 });
+
+// IC20 - mission routes
+app.use("/ic20", require("./routes/ic20-routes"));  // NEW - IC20 : mount the mission routes at /ic20 
+
+
 
 //____
 app.listen(PORT, "0.0.0.0", () =>                        // 0.0.0.0 makes the server reachable from the droplet (IC2)

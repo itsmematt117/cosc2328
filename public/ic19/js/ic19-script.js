@@ -1,34 +1,27 @@
 // IC19 – COSC 2328 – Professor McCurry
 // Implemented by: Matthew Davis
 
-/*
+/*. ANSWERS
 
-What does require('dotenv').config() do, and why must it be the first line in app.js?
-What is the difference between res.send() and res.json()? When would you use each?
-Why must .env never be committed to GitHub?
-On the droplet, MISSION_ZONE shows undefined. What are two ways you could fix 
-            this without committing .env to GitHub?
+1. require('dotenv').config() reads .env and loads each KEY=VALUE line into
+    process.env before any other code runs. It must be first because process.env
+    is read at the time each line executes — if dotenv loads after PORT is read,
+    process.env.PORT is still undefined.
 
-1)
-2)
-3) The .env contains yoru ocnfidential
-4)
+ 2. res.send() returns plain text (Content-Type: text/html).
+    res.json() serializes a JS object to JSON and sets Content-Type: application/json.
+    Use res.send() for short messages or HTML; res.json() for structured data.
+
+3) The .env contains your confidential information such as passwords and any other
+information you would not want broadcasted publicly. If tis on your public github then it
+is viewable by anyone.
+
+4) You would need to creat a new .env file on the droplet and add the variables 
+with corresponding values to it. 
 
 */
 
-// Reflection answers:
-// 1. require('dotenv').config() reads .env and loads each KEY=VALUE line into
-//    process.env before any other code runs. It must be first because process.env
-//    is read at the time each line executes — if dotenv loads after PORT is read,
-//    process.env.PORT is still undefined.
-// 2. res.send() returns plain text (Content-Type: text/html).
-//    res.json() serializes a JS object to JSON and sets Content-Type: application/json.
-//    Use res.send() for short messages or HTML; res.json() for structured data.
-// 3. .env can contain API keys, passwords, and other secrets. Anyone with read
-//    access to the repo could steal them. Keep secrets out of version control.
-// 4. Two options:
-//    a) SSH into the droplet and manually create a .env file with the values.
-//    b) Pass variables to docker run: docker run -e MISSION_ZONE="Alpha Quadrant" ...
+
 
 const dl = document.getElementById('config-display');
 
