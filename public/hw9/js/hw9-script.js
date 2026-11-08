@@ -1,5 +1,24 @@
 // HW9 – COSC 2328 – Professor McCurry
 // Implemented by: Matthew Davis
+
+/*
+1) the require('dotenv').config() ensures that the .env is loaded into the process.env before
+any of the routes are mounted, this allows every other file that runs afterwards to 'have' the
+data as well. That is how process.env.PI_LICENSE gets the data.
+
+2) In HW9 we used the fetch() call to perform the process. A plain button outside a form
+doesn't actually submit, and therefore does not trigger the default action.
+
+3)If the docker container restarted, the case list resets since it is stored locally.
+We would need a database of some flavor to store the information seperatley if we want it to persist through restarts.
+As a proof of concept (small scale), you could simply export the list (even a simple json or as plain text even)
+ before shutdown, and then import the list upon boot.
+
+4) The browser side code "see's" it in the hw9-script.js when the case button is clicked.
+Response.ok evaluates to true for status codes 200-299 and false for those 400 and higher.
+Here we used a simple conditional check to determine what the next action will be based on the result.
+
+*/
 const creds = document.getElementById('credentials');
 const caseList = document.getElementById('case-list');
 
