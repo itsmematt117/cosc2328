@@ -37,6 +37,11 @@ app.get('/ic19/config', (req, res) => {                  // NEW — IC19: GET ro
 // IC20 - mission routes
 app.use("/ic20", require("./routes/ic20-routes"));  // NEW - IC20 : mount the mission routes at /ic20 
 
+// IC22 
+app.use("/ic22", require("./routes/ic22-routes"));
+
+// IC23
+app.use("/ic23", require("./routes/ic23-routes"));  // NEW - IC23 : mount the mission routes at /ic23
 // HW9 - NEON N.
 app.use('/hw9', require('./routes/hw9-routes'));  // NEW — HW9: mount hw9 router
 
