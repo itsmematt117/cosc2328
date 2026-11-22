@@ -3,21 +3,16 @@
 
 
 /*
-fetch() GET uses zero options — the defaults work. What three options does fetch() 
-POST require and why does each one matter?
+1)It requires method so it knows which to use (i.e post or get), what headers to use (so 
+it knows what to expect), and body (what the actual data will be).
 
-1)
+2) It uses a regular function because the ID is needed and the arrow function would not provide that
+capability. If you used the arrow the lastID would be undefined.
 
-Why does the db.run callback use function (err) instead of (err) =>? What would this.
-lastID be if you used an arrow function?
+3)You need the 2nd fetch because the first one just returns the header, not the actual body / data.
 
-What is the re-fetch pattern and why does it keep the UI in sync with the server
- instead of just appending a new <li> directly?
-
-Open the Network tab and look at the GET and POST requests side by side. 
-What is different about the POST in the Headers and Payload tabs that the GET 
-doesn't have?
-
+4)HEADERS: Post has the has priority: highest , and rquest of type application/json. In the
+Payload tab, post has the json data and GET has nothing.
 
 */
 

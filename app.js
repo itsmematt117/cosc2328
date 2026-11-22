@@ -10,7 +10,12 @@ const app     = express();                               // create the Express a
 //const PORT2    = 3000;                                    // the port your browser connects to
 
 //
-app.use(express.json());                                    // NEW - IC20 : parse incoming JSON and make it available on req.body
+app.use(express.json());                                   // NEW - IC20 : parse incoming JSON and make it available on req.body
+
+//hw10
+app.use(express.urlencoded({ extended: true }));
+//hw10
+app.use('/hw10', require('./routes/hw10-routes'));  // NEW — HW10: mount hw10 router
 
 
 
@@ -44,6 +49,7 @@ app.use("/ic22", require("./routes/ic22-routes"));
 app.use("/ic23", require("./routes/ic23-routes"));  // NEW - IC23 : mount the mission routes at /ic23
 // HW9 - NEON N.
 app.use('/hw9', require('./routes/hw9-routes'));  // NEW — HW9: mount hw9 router
+
 
 
 //____
