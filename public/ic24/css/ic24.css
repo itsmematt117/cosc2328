@@ -1,0 +1,140 @@
+/* IC24 – COSC 2328 – Professor McCurry */
+/* Implemented by: Matthew Davis */
+/* ic24.css | Session State — Student Favorites */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #2a7ae2;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+header .subtitle {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ── Main Layout ───────────────────────────────────── */
+main {
+  padding: 20px 30px;
+  text-align: center;
+}
+header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+header .subtitle { font-size: 0.9rem; opacity: 0.85; }
+
+main {
+  display: flex;
+  gap: 24px;
+  padding: 24px 30px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+}
+
+.student-panel {
+  flex: 2;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.student-panel h2 { font-size: 1.15rem; color: #1a1a1a; margin-bottom: 8px; }
+.student-panel .hint { font-size: 0.82rem; color: #777; margin-bottom: 16px; line-height: 1.4; }
+
+#student-list { list-style: none; }
+#student-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s ease;
+}
+#student-list li:last-child { border-bottom: none; }
+#student-list li:hover { background: #f7f9fc; }
+#student-list li.favorited { background: #fffbe6; border-left: 3px solid #f5a623; }
+#student-list li.placeholder { color: #999; font-style: italic; justify-content: center; padding: 20px; }
+
+.star-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+}
+.star-btn:hover { border-color: #f5a623; color: #f5a623; background: #fff8e7; }
+.favorited .star-btn { background: #f5a623; border-color: #f5a623; color: white; }
+
+.favorites-panel {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  align-self: flex-start;
+  position: sticky;
+  top: 24px;
+}
+.favorites-panel h2 { font-size: 1.1rem; color: #1a1a1a; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+
+.badge {
+  background: #2a7ae2;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.btn-clear {
+  width: 100%;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+.btn-clear:hover { background: #e74c3c; color: white; }
+
+#favorites-info .empty-msg { font-size: 0.82rem; color: #999; font-style: italic; text-align: center; padding: 12px 0; }
+
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.78rem;
+  color: #999;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}

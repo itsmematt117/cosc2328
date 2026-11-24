@@ -9,6 +9,31 @@ const path    = require("path");                          // built-in Node modul
 const app     = express();                               // create the Express application
 //const PORT2    = 3000;                                    // the port your browser connects to
 
+const cookieParser = require('cookie-parser');  //added ic24
+const session      = require('express-session');          // NEW - IC24 : load express-session middleware
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cookieParser());                           // ADD — IC24
+app.use(session({                                  // ADD — IC24
+  secret: 'ic24-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { httpOnly: true, maxAge: 1000 * 60 * 60 }
+}));
+
+// … existing route mounts (hw9, ic20, ic22, ic23) …
+
+// app.use("/ic24", require("./routes/ic24-routes")); // ADD — IC24
+
+// app.listen(PORT, "0.0.0.0", () =>
+//   console.log(`Running on http://localhost:${PORT}`)
+// );
+
+
 //
 app.use(express.json());                                   // NEW - IC20 : parse incoming JSON and make it available on req.body
 
@@ -49,6 +74,8 @@ app.use("/ic22", require("./routes/ic22-routes"));
 app.use("/ic23", require("./routes/ic23-routes"));  // NEW - IC23 : mount the mission routes at /ic23
 // HW9 - NEON N.
 app.use('/hw9', require('./routes/hw9-routes'));  // NEW — HW9: mount hw9 router
+
+app.use("/ic24", require("./routes/ic24-routes")); // ADD — IC24
 
 
 

@@ -1,0 +1,45 @@
+<!-- IC24 – COSC 2328 – Professor McCurry -->
+ <!-- Implemented by: Matthew Davis -->
+<!-- Session State — Tracking Student Favorites with express-session -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC24 – Session Favorites</title>
+  <link rel="stylesheet" href="css/ic24.css">
+</head>
+<body>
+
+  <header>
+    <h1>🗄️ Student Favorites</h1>
+    <p class="subtitle">Session State with express-session</p>
+  </header>
+
+  <main>
+    <!-- Left: Student List -->
+    <section class="student-panel">
+      <h2>All Students</h2>
+      <p class="hint">Click ☆ to add a student to your favorites. Favorites are stored in your server-side session — they persist across page reloads but are unique to your browser.</p>
+      <ul id="student-list">
+        <li class="placeholder">Loading students...</li>
+      </ul>
+    </section>
+
+    <!-- Right: Favorites Sidebar -->
+    <section class="favorites-panel">
+      <h2>⭐ My Favorites <span id="favorites-count" class="badge">0</span></h2>
+      <button id="clear-favorites-btn" class="btn-clear">Clear Favorites</button>
+      <div id="favorites-info">
+        <p class="empty-msg">No favorites yet. Click ☆ next to a student to get started.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>COSC 2328 · Web Development · Professor McCurry</p>
+  </footer>
+
+  <script src="js/ic24-script.js"></script>
+</body>
+</html>
